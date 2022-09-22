@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+int Caculate(int n,long long k){
+    long long x= pow(2,n-1);
+    if(k==x) return n;
+    if(k<x) return Caculate(n-1,k);
+    return Caculate(n-1,k-x);
+}
+int main(){
+    int t,n; long long k;
+    cin>>t;
+    while(t--){
+        cin>>n>>k;
+        cout<<Caculate(n,k)<<endl;
+    }
+}
